@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.*;
@@ -23,16 +24,15 @@ public class BaseTest {
     @BeforeMethod
     @Parameters({"BaseURL"})
     public void launchBrowser(String BaseURL) {
-        //  ChromeOptions ops= new ChromeOptions(); in case you have problems with chrome driver
-        //  ops.addArguments("--remote-allow-origins=*");
-        //  driver = new ChromeDriver(ops); to resolve the Driver Problems
-        driver = new ChromeDriver();
+        ChromeOptions ops = new ChromeOptions();
+        ops.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(ops); //       in case you have problems with chrome driver
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         actions = new Actions(driver);
         url = BaseURL;
         driver.get(url);
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
     }
     @AfterMethod
     public void closeBrowser() {driver.quit();}

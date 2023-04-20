@@ -2,12 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="TestNG">
-    <parameter name="BaseURL" value="https://www.audacy.com/"/>
+    <parameter name="BaseURL" value="https://www.zoomcare.com"/>
     <test name="Example Test" preserve-order="false">
         <classes>
             <class name="SignInTests"/>
             <class name="UserTests"/>
             <class name="LoginTests"/>
+            <class name="ScheduleTests"/>
 <!--            <class name="BaseTest"/>-->
         </classes>
     </test>
