@@ -13,9 +13,9 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.clickSearch("CNN").goToStationPage().followStn().isFollowingDisplayed();
     }
 
@@ -26,9 +26,9 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.clickMyAudio().clickMyStations().clickEdit().clickCnnRadioBtn().clickUnfollow()
                 .isUnfollowPopUpDisplayed();
     }
@@ -40,24 +40,26 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.cnnIsNotFollowed();
     }
 
     @Test(priority = 3)
-    public void stationPlaying() {
+    public void stationPlaying() throws InterruptedException {
         BasePage basepage = new BasePage(driver);
         SignUpPage signUpPage = new SignUpPage(driver);
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.scrollDownToStn();
-        homePage.clickTalk1370Stn().clickLive().isPauseDisplayed();
+        homePage.clickWeeiStn().clickLive().clickPauseBtn();
+        homePage.isPauseDisplayed();
+
     }
 
     @Test(priority = 4)
@@ -67,9 +69,9 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.isAustinDisplayed();
     }
 
@@ -80,9 +82,9 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.clickSearch("KIDS").doesSearchWork("KIDs");
     }
 
@@ -93,9 +95,9 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.clickSearch("KIDS");
         homePage.scrollDownClickCMore().doesSearchWork("KiDs");
     }
@@ -106,9 +108,9 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.clickSearch("abc");
         homePage.doesSearchWork("abc");
         homePage.clickStationsTab().doesSearchWork("abc");
@@ -122,9 +124,9 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.clickMusicMenuOptn().scrollDownToMusic().clickCaretRightBtn().isHolidayDisplayed();
     }
     @Test(priority = 9)
@@ -134,9 +136,9 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.clickPodcasts().clickCaretRightBtnPodcasts().isCJunkiePDisplayed();
         homePage.clickCaretLeftBtnPodcasts().isDatelinePDisplayed();
     }
@@ -147,9 +149,9 @@ public class UserTests extends BaseTest {
         LoginPage logInPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy();
-        logInPage.clickLogin().logIn("dana.kibizova@gmail.com", "Austin_2019");
+        logInPage.clickLogin().logIn("Pigotska.vasylyna@gmail.com", "@Rabota2023!");
         homePage.clickPodcasts().clickCaretRightBtnPodcasts()
                 .clickCJunkieP().clickCJunkiePFollow().clickBackArrow().clickMyAudio().clickPodcastsShows().isCJunkiePMyAudioDisplayed();
     }

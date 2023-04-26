@@ -14,7 +14,7 @@ public class SignInTests extends BaseTest {
         BasePage basepage = new BasePage(driver);
         SignUpPage signUpPage = new SignUpPage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickFacebook().isFacebookDisplayed();
     }
     @Test
@@ -22,7 +22,7 @@ public class SignInTests extends BaseTest {
         BasePage basepage = new BasePage(driver);
         SignUpPage signUpPage = new SignUpPage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickApple().isAppleDisplayed();
     }
     @Test
@@ -30,7 +30,7 @@ public class SignInTests extends BaseTest {
         BasePage basepage = new BasePage(driver);
         SignUpPage signUpPage = new SignUpPage(driver);
 
-        basepage.closePopUp();
+//        basepage.closePopUp();
         signUpPage.clickSignInButton().clickAudacy().isAudacyDisplayed();
     }
 }

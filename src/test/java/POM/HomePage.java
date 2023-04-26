@@ -22,7 +22,8 @@ public class HomePage extends BasePage {
     By unfollowBtn = By.cssSelector(".css-ulecpx");
     By unfollowPopUp = By.xpath("//span[text()='Removed from Stations']");
     By cnn = By.xpath("//span[text()='CNN']");
-    By talk1370Stn = By.xpath("//div[@aria-label='Slide 1 of 5']");
+//    By weeiStation = By.xpath("//div[@class='css-16e12e5']//*[contains(text(),'Boston')]");
+    By weeiStation = By.xpath("//a[@class='css-14wpruh' and  @href='/stations/weei']");
     By liveBtn = By.xpath("//button[contains(@aria-label,'Live')]");
     By pauseBtn = By.xpath("//button[@aria-label='Pause']");
     By stationsTab = By.cssSelector("#tab-label-2");
@@ -30,11 +31,13 @@ public class HomePage extends BasePage {
     By showsTab = By.cssSelector("#tab-label-4");
     By holidayStn = By.xpath("//span[text()='Holiday']");
     By musicMenu = By.xpath("//li//span[contains(text(),'Music')]");
-    By podcastsMenu = By.xpath("//li//span[contains(text(),'Podcasts')]");
-    By podcastCJunkie = By.xpath("//div[@aria-label='Slide 9 of 10']");
+//    By podcastsMenu = By.xpath("//li//span[contains(text(),'Podcasts')]");
+//    By podcastsMenu = By.xpath("//li//span[contains(text(),'Podcasts')]");
+    By podcastsMenu = By.xpath("//a[@class='css-v1pgas' and @href='/podcast']");
+    By podcastCJunkie = By.xpath("//div[@aria-label='Slide 3 of 8']");
     By followJunkieBtn = By.xpath("//button[@aria-label='Follow Crime Junkie']");
     By backBtn = By.xpath("//div[@class='css-fdpdf0']//button");
-    By podcastDateline = By.xpath("//div[@aria-label='Slide 1 of 10']//*[contains(text(),'Dateline')]");
+    By podcastDateline = By.xpath( "//div[@aria-label='Slide 1 of 8']//*[contains(text(),'Dateline')]"); //"//div[@aria-label='Slide 1 of 10']//*[contains(text(),'Dateline')]");
     By podcastsShows = By.cssSelector("#tab-label-4");
     By cJunkiePMyAudio = By.xpath("//a[@aria-label='View Crime Junkie']");
 
@@ -100,13 +103,17 @@ public class HomePage extends BasePage {
         return true;
     }
 
-    public HomePage clickTalk1370Stn() {
-        wait.until(ExpectedConditions.elementToBeClickable(talk1370Stn)).click();
+    public HomePage clickWeeiStn() {
+        wait.until(ExpectedConditions.elementToBeClickable(weeiStation)).click();
         return this;
     }
 
     public HomePage clickLive() {
         wait.until(ExpectedConditions.elementToBeClickable(liveBtn)).click();
+        return this;
+    }
+    public HomePage clickPauseBtn() {
+        wait.until(ExpectedConditions.elementToBeClickable(pauseBtn)).click();
         return this;
     }
 
@@ -115,17 +122,19 @@ public class HomePage extends BasePage {
         return true;
     }
 
-    public void scrollDownToStn() {
-        WebElement talk1370Stn = driver.findElement(By.xpath("//span[contains(text(),'Talk')]"));
+    public void scrollDownToStn() throws InterruptedException {
+        WebElement weeiStn = driver.findElement(By.xpath("//div[@aria-label='Slide 1 of 2']//span[contains(text(),'WEEI')]"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", talk1370Stn);
+        js.executeScript("arguments[0].scrollIntoView();", weeiStn);
+//        js.executeScript("window.scrollBy(0,2000)", weeiStn);
+//        wait.until(ExpectedConditions.stalenessOf(weeiStn));
     }
     public HomePage scrollDownClickCMore() throws InterruptedException {
         WebElement seeMoreBtn = driver.findElement(By.cssSelector(".css-1r2y8e7"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,2000)", "");
         seeMoreBtn.click();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         return this;
     }
     public HomePage scrollDownToMusic() throws InterruptedException {
@@ -190,12 +199,13 @@ public class HomePage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(holidayStn));
         return true;
     }
-    public HomePage clickPodcasts() {
+    public HomePage clickPodcasts()throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(podcastsMenu)).click();
+        Thread.sleep(2000);
         return this;
     }
     public HomePage clickCaretRightBtnPodcasts() throws InterruptedException{
-        WebElement exploreMusic = driver.findElement(By.xpath("//section//h2[contains(text(),'Charts')]"));
+        WebElement exploreMusic = driver.findElement(By.xpath("//section//h2[contains(text(),'Charts')]")); ////div[@class='css-14gdf82']//h2[contains(text(), 'Charts')]
         actions.moveToElement(exploreMusic).perform();
         Thread.sleep(2000);
         WebElement caretRightBtn = driver.findElement(By.xpath("//div[@data-index='1']//button[@aria-label='Next slides']"));

@@ -32,7 +32,7 @@ public class BaseTest {
         actions = new Actions(driver);
         url = BaseURL;
         driver.get(url);
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
     @AfterMethod
     public void closeBrowser() {driver.quit();}
